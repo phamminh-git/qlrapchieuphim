@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/nhacc/add" method="post">
+		<table>
+			<tr>
+				<td>Nhập tên nhà cung cấp</td>
+				<td><input type="text" th:field="${nhacc.ten}"></td>
+			</tr>
+			<tr>
+				<td>Nhập địa chỉ nhà cc</td>
+				<td><input type="text" th:field="${nhacc.diaChi}"></td>
+			</tr>
+			<tr>
+				<td>Nhập số điện thoại nhà cc</td>
+				<td><input type="text" th:field="${nhacc.sodt}"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Submit" name="Submit"></td>
+			</tr>
+		</table>
+		
+	</form>
+	<form action="/nhacc/addphim" th:object="${phim}" method="post">
+		<table>
+			<tr>
+				<td>Nhập tên phim</td>
+				<td><input type="text" th:field="*{ten}"></td>
+			</tr>
+			<tr>
+				<td>Nhập tác giả</td>
+				<td><input type="text" th:field="*{tacgia}"></td>
+			</tr>
+			<tr>
+				<td>Nhập thời lượng</td>
+				<td><input type="text" th:field="*{thoiluong}"></td>
+			</tr>
+			<tr>
+				<td>Nhập giá mua</td>
+				<td><input type="text" th:field="*{giaMua}"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Submit" name="Submit"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

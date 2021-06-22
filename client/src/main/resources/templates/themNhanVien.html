@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/admin/register" method="post" th:object="${nhanvien}">
+		<table>
+		<tr>
+			<td>Nhập số điện thoại</td>
+			<td><input type="text" name="phoneNum" th:field="*{phoneNum}"></td>
+		</tr>
+		<tr>
+			<td>Nhập email</td>
+			<td><input type="email" name="email" th:field="*{email}"></td>
+		</tr>
+		<tr>
+			<td>Nhập tài khoản</td>
+			<td><input type="text" name="username" th:field="*{username}"></td>
+		</tr>
+		<tr>
+			<td>Nhập mật khẩu</td>
+			<td><input type="password" name="password" th:field="*{password}"></td>
+		</tr>
+		<tr>
+			<td>Nhập vị trí</td>
+			<td>
+				<input type="radio" id="banhang" name="vitri" value="bán hàng" th:field="*{viTri}">
+				<label for="banhang">Bán hàng</label>
+				<input type="radio" id="quanly" name="vitri" value="quản lý" th:field="*{viTri}">
+				<label for="quanly">Quản lý</label>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="Đăng Nhập" value="Đăng Nhập"></td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

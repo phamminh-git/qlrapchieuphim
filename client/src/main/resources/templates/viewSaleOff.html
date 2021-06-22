@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/nhanvienbanhang/searchphim" method="get">
+		<table>
+			<tr>
+				<td>Nhập tên phim</td>
+				<td><input type="text" placeholder="nhập tên phim" name="tenphim"></td>
+				<td><input type="submit" value="Tìm kiếm"></td>
+			</tr>
+		</table>
+	</form>
+	
+	<form action="/nhanvienbanhang/selectphim" method="get">
+		<table border="1">
+		<tr>
+			<th>Tên phim</th>
+			<th>Tác giả</th>
+			<th></th>
+		</tr>
+		<tr th:each="phim: ${phims}">
+			<td th:text="${phim.ten}"></td>
+			<td th:text="${phim.tacgia}"></td>
+			<td><input type="radio" name="selectPhim" th:value="${phim.id}"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="Submit" name="Submit"></td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

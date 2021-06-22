@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/phim/add" method="post" th:object="${phim}">
+		<table>
+			<tr>
+				<td></td>
+				<td><input type="hidden" th:field="*{id}"></td>
+			</tr>
+			<tr>
+				<td>Nhập tên phim</td>
+				<td><input type="text" th:field="*{ten}"></td>
+			</tr>
+			<tr>
+				<td>Nhập tác giả</td>
+				<td><input type="text" th:field="*{tacgia}"></td>
+			</tr>
+			<tr>
+				<td>Nhập thời lượng</td>
+				<td><input type="text" th:field="*{thoiluong}"></td>
+			</tr>
+			<tr>
+				<td>Nhập giá mua</td>
+				<td><input type="text" th:field="*{giaMua}"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Thêm phim"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

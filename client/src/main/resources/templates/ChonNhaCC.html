@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>TT</th>
+			<th>Ten</th>
+			<th>Dia Chi</th>
+			<th>So dien thoai</th>
+		</tr>
+		<tr th:each="nhacc, iterStat: ${nhaccs}">
+			<td th:text="${iterStat.count}"></td>
+			<td><a th:text="${nhacc.ten}" th:href="@{/phieunhapphim/chonnhacc/{id}(id=${nhacc.id})}"></a></td>
+			<td th:text="${nhacc.diaChi}"></td>
+			<td th:text="${nhacc.sodt}"></td>
+		</tr>
+	</table>
+</body>
+</html>

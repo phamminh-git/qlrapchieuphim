@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>TT</th>
+			<th>Tên phim</th>
+			<th>Ngày chiếu</th>
+			<th>Giờ chiếu</th>
+			<th>Phòng chiếu</th>
+			<th>#</th>
+		</tr>
+		<tr th:each="lichchieu, iterStat: ${lichchieus}">
+			<td th:text="*{iterStat.count}"></td>
+			<td th:text="*{lichchieu.phim.ten}"></td>
+			<td th:text="*{lichchieu.ngayChieu}"></td>
+			<td th:text="*{lichchieu.gioChieu}"></td>
+			<td th:text="*{lichchieu.phongChieu.ten}"></td>
+			<td><a th:href="@{/khachhang/selectlichchieu/{id}(id=${lichchieu.id})}">Chon</a></td>
+		</tr>
+	</table>
+</body>
+</html>

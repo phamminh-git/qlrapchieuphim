@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/nhanvienquanly/submit" method="post">
+		<select name="idphong">
+			<option th:each="phong, iterStat: ${phongs}" th:value="${iterStat.count}" th:text="${phong.ten}"></option>
+		</select>
+		<select name="idphim">
+			<option th:each="phim, iterStat:${phims}" th:value="${iterStat.count}" th:text="${phim.ten}"></option>
+		</select>
+		
+		<input type="submit" value="Submit" name="Submit">
+	</form>
+</body>
+</html>

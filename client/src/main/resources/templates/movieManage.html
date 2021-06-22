@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/phim/search" method="get">
+		<input type="text" name="tenphim" placeholder="Nhập tên phim cần tìm kiếm">
+		<input type="submit" name="Submit" value="Submit">
+	</form>
+
+	<table border="1">
+		<tr>
+			<th>TT</th>
+			<th>ten</th>
+			<th>tac gia</th>
+			<th>thoi luong</th>
+			<th>gia mua</th>
+			<th>chuc nang</th>
+		</tr>
+		<tr th:each="phim,iterStat : ${phims}">
+			<td scope="row" th:text="${iterStat.count}"></td>
+			<td th:text="${phim.ten}"></td>
+			<td th:text="${phim.tacgia}"></td>
+			<td th:text="${phim.thoiluong}"></td>
+			<td th:text="${phim.giaMua}"></td>
+			<td><a th:href="@{phim/edit/{id}(id=${phim.id})}">Sửa</a></td>
+		</tr>
+	</table>
+	<a href="/phim/add">Thêm phim</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/ghengoi/search" method="get">
+		<input type="text" name="ten" placeholder="nhập số ghế cần tìm">
+		<input type="submit" name="Submit" value="Tìm kiếm">
+	</form>
+	<table border="1">
+		<tr>
+			<td>TT</td>
+			<td>Ten</td>
+			
+		</tr>
+		<tr th:each="ghengoi, iterStat: ${ghengois}">
+			<td th:text="${iterStat.count}"></td>
+			<td th:text="${ghengoi.viTriGhe.hang.ten}+${ghengoi.viTriGhe.soGhe.ten}"></td>
+		</tr>
+	</table>
+	<button><a href="/ghengoi/add">Thêm ghế ngồi</a></button>
+</body>
+</html>

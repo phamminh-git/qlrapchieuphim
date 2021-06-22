@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/phieunhapphim/themphim" method="post" th:object="${phim}">
+		<table>
+			<tr>
+				<td>Nhập tên phim</td>
+				<td><input type="text" th:field="*{ten}"></td>
+			</tr>
+			<tr>
+				<td>Nhập tác giả</td>
+				<td><input type="text" th:field="*{tacgia}"></td>
+			</tr>
+			<tr>
+				<td>Nhập thời lượng</td>
+				<td><input type="text" th:field="*{thoiluong}"></td>
+			</tr>
+			<tr>
+				<td>Nhập giá mua</td>
+				<td><input type="text" th:field="*{giaMua}"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Submit" name="Submit"></td>
+			</tr>
+		</table>
+	</form>
+	
+	<table border="1">
+		<tr>
+			<th>TT</th>
+			<th>Tên phim</th>
+			<th>Tác giả</th>
+			<th>Thời lượng</th>
+			<th>Giá mua</th>
+		</tr>
+		<tr th:each="phimchon, iterStat: ${phimchons}">
+			<td th:text="${iterStat.count}"></td>
+			<td th:text="${phimchon.ten}"></td>
+			<td th:text="${phimchon.tacgia}"></td>
+			<td th:text="${phimchon.thoiluong}"></td>
+			<td th:text="${phimchon.giaMua}"></td>
+		</tr>
+		<tr>
+			<td colspan="5"><a href="/phieunhapphim/save">Lưu phiếu nhập phim</a></td>
+		</tr>
+	</table>
+</body>
+</html>

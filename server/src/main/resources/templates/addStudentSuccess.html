@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+	<link rel="stylesheet" type="text/css" href="On tap.css">
+</head>
+<body>
+	<table th:object="${student}">
+		<tr>
+			<td>Nhập tên:</td>
+			<td><label th:text="*{name}"></label></td>
+		</tr>
+		<tr>
+			<td>Nhập mã sv:</td>
+			<td><label th:text="*{maSV}"></label></td>
+		</tr>
+		<tr>
+			<td>Ngày sinh:</td>
+			<td><label th:text="*{dateOfBirth}"></label></td>
+		</tr>
+		<tr>
+			<td>Nhập quê quán:</td>
+			<td><label th:text="*{queQuan}"></label></td>
+		</tr>
+	</table>
+</body>
+</html>

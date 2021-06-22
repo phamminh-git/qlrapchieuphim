@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Them sinh vien</title>
+</head>
+<body>
+	<h1>Nhập thông tin sinh viên cần thêm</h1>
+	<form method="POST" action="/student" th:object="${student}">
+		<table>
+		<tr>
+			<td>Nhập tên:</td>
+			<td><input type="text" name="name" th:field="*{name}"></td>
+		</tr>
+		<tr>
+			<td>Nhập mã sv:</td>
+			<td><input type="text" name="maSV" th:field="*{maSV}"></td>
+		</tr>
+		<tr>
+			<td>Ngày sinh:</td>
+			<td><input type="date" name="dob" th:field="*{dateOfBirth}"></td>
+		</tr>
+		<tr>
+			<td>Nhập quê quán:</td>
+			<td><input type="text" name="queQuan" th:field="*{queQuan}"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" value="Submit"></td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

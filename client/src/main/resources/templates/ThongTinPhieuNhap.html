@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>TT</th>
+			<th>Ten phim</th>
+			<th>Tac gia</th>
+			<th>Thoi luong</th>
+			<th>Gia mua</th>
+		</tr>
+		<tr th:each="phim, iterStat: ${phieunhapphim.listPhim}">
+			<td th:text="${iterStat.count}"></td>
+			<td th:text="${phim.ten}"></td>
+			<td th:text="${phim.tacgia}"></td>
+			<td th:text="${phim.thoiluong}"></td>
+			<td th:text="${phim.giaMua}"></td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/soghe/search" method="get">
+		<input type="text" name="ten" placeholder="nhập số ghế cần tìm">
+		<input type="submit" name="Submit" value="Tìm kiếm">
+	</form>
+	<table border="1">
+		<tr>
+			<td>TT</td>
+			<td>Ten</td>
+		</tr>
+		<tr th:each="soghe, iterStat: ${soghes}">
+			<td th:text="${iterStat.count}"></td>
+			<td th:text="${soghe.ten}"></td>
+		</tr>
+	</table>
+	<button><a href="/soghe/add">Thêm số ghế</a></button>
+</body>
+</html>

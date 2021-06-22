@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/ghengoi/add" method="post">
+		<table border="1">
+			<tr>
+				<th>#</th>
+				<th>Vi tri ghe</th>
+				<th>Chon</th>
+				<th>IsVip</th>
+			</tr>
+			<tr	th:each="vitrighe, iterStat : ${vitrighes}">
+				<td th:text="${iterStat.count}"></td>
+				<td th:text="${vitrighe.hang.ten}+${vitrighe.soGhe.ten}"></td>
+				<td><input type="checkbox" name="themghe" th:value="${vitrighe.id}"></td>
+				<td><input type="checkbox" name="isvip" th:value="${vitrighe.id}"></td>
+			</tr>
+		</table>
+		<input type="submit" value="submit" name="submit">
+	</form>
+</body>
+</html>

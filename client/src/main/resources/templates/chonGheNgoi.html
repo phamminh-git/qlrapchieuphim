@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/nhanvienbanhang/banve" method="post">
+		<div th:each="ghengoi, iterStat: ${ghengois}">
+			<label for="${iterStat.count}" th:text="${ghengoi.viTriGhe.hang.ten}+${ghengoi.viTriGhe.soGhe.ten}"></label>
+			<input type="checkbox" name="chonghe" th:value="${iterStat.count}" id="${iterStat.count}">
+		</div>
+		<input type="text" name="tennguoimua" placeholder="nhập tên người mua">
+		<input type="submit" name="Submit" value="Submit">
+	</form>
+</body>
+</html>

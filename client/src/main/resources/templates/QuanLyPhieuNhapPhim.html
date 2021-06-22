@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>TT</th>
+			<th>Ten nha cung cap</th>
+		</tr>
+		<tr th:each="phieunhapphim, iterStat: ${phieunhapphims}">
+			<td th:text="${iterStat.count}"></td>
+			<td><a th:text="${phieunhapphim.nhaCC.ten}" th:href="@{phieunhapphim/get/{id}(id=${phieunhapphim.id})}"></a></td>
+		</tr>
+	</table>
+	<button><a href="/phieunhapphim/add">Nhập phim</a></button>
+</body>
+</html>

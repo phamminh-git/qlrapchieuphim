@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/soghe/add" method="post" th:object="${soghe}">
+		<table>
+		<tr>
+				<td></td>
+				<td><input type="hidden" th:field="*{id}"></td>
+			</tr>
+			<tr>
+				<td>Nhập tên hàng ngồi</td>
+				<td><input type="text" th:field="*{ten}"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Thêm" name="Submit"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

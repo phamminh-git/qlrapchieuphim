@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/phongchieu/search" method="get">
+		<input type="text" name="ten" placeholder="nhập tên hàng cần tìm">
+		<input type="submit" name="Submit" value="Tìm kiếm">
+	</form>
+	<table border="1">
+		<tr>
+			<td>TT</td>
+			<td>Ten</td>
+			<td>Chuc nang</td>
+		</tr>
+		<tr th:each="phongchieu, iterStat: ${phongchieus}">
+			<td th:text="${iterStat.count}"></td>
+			<td th:text="${phongchieu.ten}"></td>
+			<td><a th:href="@{/phongchieu/manage/{id}(id=${phongchieu.id})}">QuanLy</a></td>
+		</tr>
+	</table>
+	<button><a href="/phongchieu/add">Thêm phong chieu</a></button>
+</body>
+</html>

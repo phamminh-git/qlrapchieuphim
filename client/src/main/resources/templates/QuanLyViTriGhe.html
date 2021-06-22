@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/vitrighe/search" method="get">
+		<input type="text" name="ten" placeholder="nhập số ghế cần tìm">
+		<input type="submit" name="Submit" value="Tìm kiếm">
+	</form>
+	<table border="1">
+		<tr>
+			<td>TT</td>
+			<td>Ten</td>
+		</tr>
+		<tr th:each="vitrighe, iterStat: ${vitrighes}">
+			<td th:text="${iterStat.count}"></td>
+			<td th:text="${vitrighe.hang.ten}+${vitrighe.soGhe.ten}"></td>
+		</tr>
+	</table>
+	<button><a href="/vitrighe/add">Thêm số ghế</a></button>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/nhacc/search" method="get">
+		<input type="text" name="ten" placeholder="nhập tên hàng cần tìm">
+		<input type="submit" name="Submit" value="Tìm kiếm">
+	</form>
+	<table border="1">
+		<tr>
+			<td>TT</td>
+			<td>Ten</td>
+			<td>Dia chi</td>
+			<td>So dien thoai</td>
+		</tr>
+		<tr th:each="nhacc, iterStat: ${nhaccs}">
+			<td th:text="${iterStat.count}"></td>
+			<td th:text="${nhacc.ten}"></td>
+			<td th:text="${nhacc.diaChi}"></td>
+			<td th:text="${nhacc.sodt}"></td>
+		</tr>
+	</table>
+	<button><a href="/nhacc/add">Thêm nhà cc</a></button>
+</body>
+</html>
